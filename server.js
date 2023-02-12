@@ -23,6 +23,7 @@ if (!process.env.DISABLE_XORIGIN) {
 }
 
 app.use('/public', express.static(process.cwd() + '/public'));
+//app.use(express.static('public'));
 
 app.route('/_api/package.json')
   .get(function(req, res, next) {
@@ -59,5 +60,4 @@ const listener = app.listen(process.env.PORT || 3000, function () {
 });
 
 
-// Export the Express API
-module.exports = app
+module.exports = app;
